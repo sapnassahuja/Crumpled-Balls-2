@@ -19,8 +19,8 @@ function setup() {
   createCanvas(2000,700);
     engine = Engine.create();
 	world = engine.world;
-  paper = new Paper(100,350,70);	
-  dustbin = new Dustbin(600,700);
+  paper = new Paper(100,500,70);	
+  dustbin = new Dustbin(600,300);
   ground = new Ground(400,700,2000,20);
   Engine.run(engine);
 }

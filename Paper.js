@@ -1,5 +1,5 @@
 class Paper {
-    constructor(x, y,radius) {
+    constructor(x, y,r) {
      
         var options ={
          isStatic:false,
@@ -7,18 +7,23 @@ class Paper {
          friction:0.3,
          density:1.2
         }
+        this.r = r;
+      this.x = x;
+      this.y = y;
         this.image = loadImage("paper.png");
-      this.body = Bodies.circle(x, y, radius,options);
-      this.radius = radius;
+      this.body = Bodies.circle(this.x, this.y, (this.r-20)/2,options);
+      
       World.add(world, this.body);
     }
     display(){
       var pos = this.body.position;
-      
-      imageMode(CENTER);
+      push();
+      translate(pos.x,pos.y);
+      rectMode(CENTER);
       fill("white");
-      image(this.image,pos.x, pos.y,this.radius);
-    
+      imageMode(CENTER);
+      image(this.image,0, 0,this.r,this.r);
+    pop();
      
     }
   }
