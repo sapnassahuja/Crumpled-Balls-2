@@ -5,8 +5,8 @@ class Dustbin {
      
       this.x = x;
       this.y = y;
-      this.dustbinWidth = 100;
-      this.dustbinHeight = 100;
+      this.dustbinWidth = 200;
+      this.dustbinHeight = 200;
       this.bodythickness = 20;
       this.image = loadImage("dustbingreen.png");
       this.bottomBody = Bodies.rectangle(this.x, this.y, this.dustbinWidth,this.bodythickness,{isStatic:true});
@@ -40,6 +40,7 @@ class Dustbin {
        push(); 
       translate(posBottom.x,posBottom.y); 
       rectMode(CENTER); 
+           angleMode(RADIANS);
        fill("white"); 
        image(this.image,0,-this.dustbinHeight/2,this.dustbinWidth, this.dustbinHeight);
        pop ();
